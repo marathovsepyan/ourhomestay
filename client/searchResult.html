@@ -1,0 +1,43 @@
+<template name="SearchResult">
+<section class="main-content-wrapper">
+        <div class="container">
+            <article class="search-lists">
+                <h2 class="search-result-txt">Search results : {{searchCount}}</h2>
+                <div class="row">
+                    {{#EasySearch.IfInputEmpty index=HomestayIndex}}
+                    {{else}}
+
+                        {{#EasySearch.IfNoResults index=HomestayIndex }}
+    						    <div class="col-sm-12 text-center noresult">
+            
+    						        <i class="fa fa-frown-o fa-4x text-muted"></i>
+    						        <h5 class="text-muted p-t-10 p-b-10">No search results found!</h5>
+    						    </div>
+    				    {{/EasySearch.IfNoResults}}
+                        {{#EasySearch.Each index=HomestayIndex }}
+    			           <aside class="col-sm-4">
+                                <div class="list-block">
+                                    {{# if image.length}}
+                                        <a href="#" class="homestay-item"><figure><img src="{{image.[0].url}}" alt="{{name}}"></figure></a>
+                                    {{else}}
+                                        <a href="#" class="homestay-item"><figure><img src="../images/homes/05.jpg" alt="{{name}}"></figure></a>
+                                    {{/if}}
+                                    <div class="list-block-content">
+                                        <a href="#"><span class="home-name">{{name}}</span></a>
+                                        <a href="#"><span class="home-location">{{city}}, {{country}}</span></a>
+                                    </div>
+                                </div>
+                            </aside>
+    			        {{/EasySearch.Each}}
+			            {{#if moreResult}}
+                            <div class="load-more" id="search-load-more"> 
+                                <button class="primary-btn load-box" >Load More</button>
+                            </div>
+                        {{/if}}
+                    {{/EasySearch.IfInputEmpty}}   
+                </div>
+                
+            </article>
+        </div>
+    </section>
+</template>

@@ -1,0 +1,35 @@
+{
+  "name": "AppName",
+  "private": true,
+  "scripts": {
+    "start": "meteor run --settings settings.json"
+  },
+  "dependencies": {
+    "babel-runtime": "6.18.0",
+    "classnames": "^2.2.5",
+    "faker": "^3.1.0",
+    "jquery-validation": "^1.15.0",
+    "material-ui": "^0.15.2",
+    "meteor-node-stubs": "~0.2.0",
+    "moment": "^2.12.0",
+    "react": "^15.2.1",
+    "react-addons-create-fragment": "^15.2.1",
+    "react-addons-css-transition-group": "^15.2.1",
+    "react-addons-linked-state-mixin": "^15.2.1",
+    "react-addons-perf": "^15.2.1",
+    "react-addons-pure-render-mixin": "^15.6.2",
+    "react-addons-test-utils": "^15.2.1",
+    "react-addons-transition-group": "^15.2.1",
+    "react-addons-update": "^15.2.1",
+    "react-autosuggest": "^3.7.4",
+    "react-awesome-modal": "^2.0.5",
+    "react-dom": "^15.0.2",
+    "react-modal": "^1.4.0",
+    "react-motion": "^0.4.2",
+    "react-mounter": "^1.1.0",
+    "react-select": "^1.0.0-beta13",
+    "react-validation": "^1.7.4",
+    "validate.js": "^0.9.0",
+    "validator": "^5.4.0"
+  }
+}

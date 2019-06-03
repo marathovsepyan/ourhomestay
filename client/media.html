@@ -1,0 +1,66 @@
+<template name="media">
+  <form class="form-horizontal" id="form-media-test" role="form">
+    <div class="form-group">
+      {{#if success}}
+        <div class="col-sm-8">
+          <div class="success-message">
+            {{success.message}}
+          </div>
+        </div>
+      {{/if }}
+      {{#if error}}
+        <div class="col-sm-8">
+          <div class="error-message">
+            {{error.message}}
+          </div>
+        </div>
+      {{/if }}
+    </div>
+    <div class="form-group">
+      <label htmlFor="photos" class="col-sm-4 control-label">Upload Photos <i class="semi">:</i></label>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-12">
+        <div class="form-control input-file">
+          {{#if homeData.image}}
+            <div class="uploaded-medias">
+              {{#each homeData.image}}
+                <figure>
+                  <span class="glyphicon glyphicon-remove deleteImage" aria-hidden="true" data-id="{{_id}}"></span>
+                  <img src="{{url}}" alt="{{_id}}">
+                </figure>
+              {{/each}}
+            </div>
+          {{/if}}
+          {{> customUpload }}
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="youtube" class="col-sm-4 control-label">Youtube Link <i class="semi">:</i></label>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-12">
+        <input 
+        type="text" 
+        class="form-control" 
+        id="video" 
+        ref="video" 
+        name="video" 
+        placeholder="Enter embed youtube url"
+        value="{{homeData.videoUrl}}" 
+        />
+      </div>
+    </div>
+    <br />
+    <div class="form-group">
+      <div class="col-sm-4" >
+          <input class="btn primary-btn lg" type="submit" value="Update Changes" />
+      </div>
+    </div>
+  </form>
+</template>
+
+<template name="customUpload">
+   {{> upload_bootstrap fileTypes='.jpg,.jpeg,.png' callbacks=myCallbacks}}
+</template>
