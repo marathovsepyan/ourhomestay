@@ -30,6 +30,6 @@
     "react-select": "^1.0.0-beta13",
     "react-validation": "^1.7.4",
     "validate.js": "^0.9.0",
-    "validator": "^5.4.0"
+    "validator": "^13.7.0"
   }
 }
